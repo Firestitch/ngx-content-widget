@@ -26,7 +26,7 @@ export class FsContentWidgetsComponent implements OnInit, OnDestroy {
   @ViewChild(FsListComponent, { static: true })
   public list: FsListComponent;
 
-  public config: FsListConfig = null;
+  public config: FsListConfig;
 
   private _destroy$ = new Subject();
 
@@ -36,6 +36,7 @@ export class FsContentWidgetsComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
     this.config = {
+      paging: false,
       filters: [
         {
           name: 'keyword',
