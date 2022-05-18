@@ -31,7 +31,12 @@
                 "glob": "**/*",
                 "input": "node_modules/@firestitch/froala/js/",
                 "output": "assets/js/froala/"
-              }              
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-monaco-editor/assets/monaco",
+                "output": "./assets/monaco/"
+              }                         
             ],
             "styles": [
               "playground/styles.scss"

@@ -22,6 +22,7 @@ import { ContentWidgetsComponent } from './components/content-widgets';
 import { FS_CONTENT_WIDGET_CONFIG } from 'src/app/content-widget/injectors';
 import { contentWidgetConfigFactory } from './helpers/content-widget-config-factory';
 import { ContentWidgetComponent } from './components/content-widget';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
     FormsModule,
     FsLabelModule,
     FsStoreModule,
+    MonacoEditorModule.forRoot(),
     FsExampleModule.forRoot(),
     FsHtmlEditorModule.forRoot(),
     FsMessageModule.forRoot(),

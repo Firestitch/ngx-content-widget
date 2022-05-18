@@ -1,22 +1,53 @@
 
 <form fsForm [submit]="save">
   <fs-dialog>
-    <div mat-dialog-title>Content Widget</div>
+    <div mat-dialog-title>
+      Content Widget
+      <div class="subtitle">{{contentWidget.name}}</div>
+    </div>
     <mat-dialog-content>
-      <mat-form-field>
-        <input 
-          matInput 
-          placeholder="Name" 
-          [(ngModel)]="contentWidget.name" 
-          name="name" 
-          [required]="true">
-      </mat-form-field>
 
-      <fs-html-editor
-        [(ngModel)]="contentWidget.content"
-        [config]="htmlEditorConfig"
-        name="content">
-      </fs-html-editor>
+      <mat-tab-group>
+        <mat-tab label="Rich Text">
+          <ng-template matTabContent>
+            <fs-html-editor
+              [(ngModel)]="contentWidget.content"
+              [config]="htmlEditorConfig"
+              name="content">
+            </fs-html-editor>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="HTML">
+          <ng-template matTabContent>
+            <fs-text-editor 
+              [(ngModel)]="contentWidget.content" 
+              [config]="{ language: 'html' }"
+              name="html">
+            </fs-text-editor>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Styles">
+          <ng-template matTabContent>
+            <fs-text-editor 
+              [(ngModel)]="contentWidget.styles" 
+              [config]="{ language: 'css' }"
+              name="css">
+            </fs-text-editor>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Settings">
+          <mat-form-field>
+            <input 
+              matInput 
+              placeholder="Name" 
+              [(ngModel)]="contentWidget.name" 
+              name="name" 
+              [required]="true">
+          </mat-form-field>
+        </mat-tab>
+      </mat-tab-group>
+
+
     </mat-dialog-content>
     <mat-dialog-actions>
       <button 

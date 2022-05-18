@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FsHtmlEditorConfig } from '@firestitch/html-editor';
 
 import { FsMessage } from '@firestitch/message';
@@ -21,7 +21,6 @@ export class FsContentWidgetComponent implements OnInit {
   private _saveContentWidget: (contentWidget: any) => Observable<any>;
 
   public constructor(
-    private _dialogRef: MatDialogRef<FsContentWidgetComponent>,
     private _message: FsMessage,
     @Inject(MAT_DIALOG_DATA) private _data: any,
   ) {
@@ -38,7 +37,6 @@ export class FsContentWidgetComponent implements OnInit {
       .pipe(
         tap((contentWidget) => {
           this.contentWidget = { ...this.contentWidget, ...contentWidget };
-          this._dialogRef.close(this.contentWidget);
           this._message.success('Saved Changes');
         }),
       );

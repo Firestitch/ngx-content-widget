@@ -1,7 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -12,11 +13,10 @@ import { FsDateModule } from '@firestitch/date';
 import { FsDialogModule } from '@firestitch/dialog';
 import { FsFormModule } from '@firestitch/form';
 import { FsHtmlEditorModule } from '@firestitch/html-editor';
+import { FsTextEditorModule } from '@firestitch/text-editor';
 
 import { FsContentWidgetComponent } from './components/content-widget';
 import { FsContentWidgetsComponent } from './components/content-widgets';
-import { MatButtonModule } from '@angular/material/button';
-
 
 @NgModule({
   imports: [
@@ -27,12 +27,14 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatTabsModule,
 
     FsListModule,
     FsDateModule,
     FsFormModule,
     FsHtmlEditorModule,
     FsDialogModule,
+    FsTextEditorModule,
   ],
   exports: [
     FsContentWidgetsComponent,

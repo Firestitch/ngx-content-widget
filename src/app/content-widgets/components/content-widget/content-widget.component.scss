@@ -2,8 +2,13 @@ mat-form-field {
   width: 100%;
 }
 
-:host ::ng-deep {
-  .mat-dialog-content {
-    min-height: 400px;
-  }
+fs-html-editor {
+  min-height: 400px;
+  display: block;
+  overflow: hidden;
+}
+
+.subtitle {
+  font-size: 60%;
+  line-height: normal;
 }
