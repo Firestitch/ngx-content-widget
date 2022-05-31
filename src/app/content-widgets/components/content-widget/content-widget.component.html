@@ -21,7 +21,7 @@
           <ng-template matTabContent>
             <fs-text-editor 
               [(ngModel)]="contentWidget.content" 
-              [config]="{ language: 'html' }"
+              [config]="{ language: 'html', tabSize: 2 }"
               name="html">
             </fs-text-editor>
           </ng-template>
@@ -30,8 +30,8 @@
           <ng-template matTabContent>
             <fs-text-editor 
               [(ngModel)]="contentWidget.styles" 
-              [config]="{ language: 'css' }"
-              name="css">
+              [config]="{ language: 'scss', tabSize: 2 }"
+              name="styles">
             </fs-text-editor>
           </ng-template>
         </mat-tab>
