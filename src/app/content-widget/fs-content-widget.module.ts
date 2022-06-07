@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FsHtmlEditorModule } from '@firestitch/html-editor';
 
 import { FsContentWidgetComponent } from './components/content-widget';
+import { FsContentWidgetRendererComponent } from './components/content-widget-renderer';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FsContentWidgetComponent } from './components/content-widget';
     FsContentWidgetComponent,
   ],
   declarations: [
+    FsContentWidgetRendererComponent,
     FsContentWidgetComponent,
   ],
 })

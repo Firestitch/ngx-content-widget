@@ -31,7 +31,20 @@ export class ContentWidgetsComponent implements OnInit {
           "id": 8,
           "tag": "terms",
           "name": "Terms & Conditions: Agreement",
-          "content": "<ol><li>Customer Name: {$clientAccountName}</li><li>Billing Address: {$clientAccountAddress}</li><li>Payment Terms: {$paymentTerms}</li><li>Interest On Overdue Invoices: {$overdueInterest}</li><li>Service Location: {$serviceLocation}</li><li>Start Date: {$startDate}</li><li>End Date: {$endDate}</li><li>Termination Terms: {$terminationTerms}</li><li>Additional Terms &amp; Conditions: {$additionalTerms}</li><li>Undersigned: {$undersignedName}</li><li>Undersigned Email: {$undersignedEmail}</li><li>Create Date: {$createDate}</li></ol>",
+          "content": `<ol>
+            <li>Customer Name: {$clientAccountName}</li>
+            <li>Billing Address: {$clientAccountAddress}</li>
+            <li>Payment Terms: {$paymentTerms}</li>
+            <li>Interest On Overdue Invoices: {$overdueInterest}</li>
+            <li>Service Location: {$serviceLocation}</li>
+            <li>Start Date: {$startDate}</li>
+            <li>End Date: {$endDate}</li>
+            <li>Termination Terms: {$terminationTerms}</li>
+            <li>Additional Terms &amp; Conditions: {$additionalTerms}</li>
+            <li>Undersigned: {$undersignedName}</li>
+            <li>Undersigned Email: {$undersignedEmail}</li>
+            <li>Create Date: {$createDate}</li>
+          </ol>`,
           "modifiedDate": "2022-05-03T19:43:51+00:00",
           "styles": null,
           "class": null

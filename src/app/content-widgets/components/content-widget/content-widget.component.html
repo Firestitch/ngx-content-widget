@@ -8,15 +8,6 @@
     <mat-dialog-content>
 
       <mat-tab-group>
-        <mat-tab label="Rich Text">
-          <ng-template matTabContent>
-            <fs-html-editor
-              [(ngModel)]="contentWidget.content"
-              [config]="htmlEditorConfig"
-              name="content">
-            </fs-html-editor>
-          </ng-template>
-        </mat-tab>
         <mat-tab label="HTML">
           <ng-template matTabContent>
             <fs-text-editor 
@@ -24,6 +15,15 @@
               [config]="{ language: 'html', tabSize: 2 }"
               name="html">
             </fs-text-editor>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="Rich Text">
+          <ng-template matTabContent>
+            <fs-html-editor
+              [(ngModel)]="contentWidget.content"
+              [config]="htmlEditorConfig"
+              name="content">
+            </fs-html-editor>
           </ng-template>
         </mat-tab>
         <mat-tab label="Styles">
@@ -46,8 +46,6 @@
           </mat-form-field>
         </mat-tab>
       </mat-tab-group>
-
-
     </mat-dialog-content>
     <mat-dialog-actions>
       <button 

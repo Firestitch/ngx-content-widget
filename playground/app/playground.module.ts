@@ -27,6 +27,7 @@ import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
+  { path: 'contact', component: ExamplesComponent },
 ];
 
 @NgModule({
