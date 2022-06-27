@@ -10,8 +10,8 @@
       <mat-tab-group>
         <mat-tab label="HTML">
           <ng-template matTabContent>
-            <fs-text-editor 
-              [(ngModel)]="contentWidget.content" 
+            <fs-text-editor
+              [(ngModel)]="contentWidget.content"
               [config]="{ language: 'html', tabSize: 2 }"
               name="html">
             </fs-text-editor>
@@ -28,8 +28,8 @@
         </mat-tab>
         <mat-tab label="Styles">
           <ng-template matTabContent>
-            <fs-text-editor 
-              [(ngModel)]="contentWidget.styles" 
+            <fs-text-editor
+              [(ngModel)]="contentWidget.styles"
               [config]="{ language: 'scss', tabSize: 2 }"
               name="styles">
             </fs-text-editor>
@@ -37,25 +37,25 @@
         </mat-tab>
         <mat-tab label="Settings">
           <mat-form-field>
-            <input 
-              matInput 
-              placeholder="Name" 
-              [(ngModel)]="contentWidget.name" 
-              name="name" 
+            <input
+              matInput
+              placeholder="Name"
+              [(ngModel)]="contentWidget.name"
+              name="name"
               [required]="true">
           </mat-form-field>
         </mat-tab>
       </mat-tab-group>
     </mat-dialog-content>
     <mat-dialog-actions>
-      <button 
-          mat-button 
+      <button
+          mat-button
           color="primary">
         Save
       </button>
-      <button 
-          mat-button 
-          [mat-dialog-close]="null" 
+      <button
+          mat-button
+          [mat-dialog-close]="null"
           type="button">
         Cancel
       </button>
