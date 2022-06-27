@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FsHtmlEditorModule } from '@firestitch/html-editor';
+import { FsHtmlEditorModule, FsHtmlRendererModule } from '@firestitch/html-editor';
 
 import { FsContentWidgetComponent } from './components/content-widget';
 import { FsContentWidgetRendererComponent } from './components/content-widget-renderer';
@@ -12,6 +12,7 @@ import { FsContentWidgetRendererComponent } from './components/content-widget-re
     CommonModule,
 
     FsHtmlEditorModule,
+    FsHtmlRendererModule,
   ],
   exports: [
     FsContentWidgetComponent,
