@@ -12,3 +12,9 @@ fs-html-editor {
   font-size: 60%;
   line-height: normal;
 }
+
+:host ::ng-deep {
+  .mat-tab-body-content {
+    overflow: visible;
+  }
+}

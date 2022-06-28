@@ -6,8 +6,7 @@
       <div class="subtitle">{{contentWidget.name}}</div>
     </div>
     <mat-dialog-content>
-
-      <mat-tab-group>
+      <mat-tab-group [animationDuration]="0">
         <mat-tab label="HTML">
           <ng-template matTabContent>
             <fs-text-editor
