@@ -23,6 +23,7 @@ import { FS_CONTENT_WIDGET_CONFIG } from 'src/app/content-widget/injectors';
 import { contentWidgetConfigFactory } from './helpers/content-widget-config-factory';
 import { ContentWidgetComponent } from './components/content-widget';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
+import { ContentWidgetDialogComponent } from './components/content-widget-dialog';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
     ExamplesComponent,
     ContentWidgetsComponent,
     ContentWidgetComponent,
+    ContentWidgetDialogComponent,
   ],
 })
 export class PlaygroundModule {
