@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppMaterialModule } from './material.module';
 import {
+  ContentWidgetContainerComponent,
   ExamplesComponent
 } from './components';
 import { AppComponent } from './app.component';
@@ -61,6 +62,7 @@ const routes: Routes = [
     ContentWidgetsComponent,
     ContentWidgetComponent,
     ContentWidgetDialogComponent,
+    ContentWidgetContainerComponent,
   ],
 })
 export class PlaygroundModule {

@@ -1,7 +1,8 @@
-import { ChangeDetectorRef, Component, Inject, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ContentChild, Inject, Input, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { FsContentWidgetContentDirective } from '../../directives';
 import { FS_CONTENT_WIDGET_CONFIG } from '../../injectors';
 import { FsContentWidgetConfig } from '../../interfaces/content-widget-config';
 
@@ -12,6 +13,9 @@ import { FsContentWidgetConfig } from '../../interfaces/content-widget-config';
   styleUrls: ['./content-widget.component.scss'],
 })
 export class FsContentWidgetComponent implements OnDestroy, OnInit {
+
+  @ContentChild(FsContentWidgetContentDirective, { read: TemplateRef })
+  public contentWidgetContent: TemplateRef<any>;
 
   public content;
 

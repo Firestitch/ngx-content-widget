@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { FsHtmlEditorModule, FsHtmlRendererModule } from '@firestitch/html-editor';
 
-import { FsContentWidgetComponent } from '../content-widget/components/content-widget';
-import { FsContentWidgetRendererComponent } from '../content-widget/components/content-widget-renderer';
-import { FsContentWidgetDialogComponent } from '../content-widget/components';
+import { FsContentWidgetComponent } from './components/content-widget';
+import { FsContentWidgetRendererComponent } from './components/content-widget-renderer';
+import { FsContentWidgetDialogComponent } from './components';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { FsDialogModule } from '@firestitch/dialog';
+import { FsContentWidgetContentDirective } from './directives';
 
 
 @NgModule({
@@ -24,11 +25,13 @@ import { FsDialogModule } from '@firestitch/dialog';
   ],
   exports: [
     FsContentWidgetComponent,
+    FsContentWidgetContentDirective,
   ],
   declarations: [
     FsContentWidgetRendererComponent,
     FsContentWidgetComponent,
     FsContentWidgetDialogComponent,
+    FsContentWidgetContentDirective,
   ],
 })
 export class FsContentWidgetModule {
