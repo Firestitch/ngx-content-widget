@@ -19,7 +19,7 @@ import { FsHtmlEditorConfig } from '@firestitch/html-editor';
 })
 export class FsContentWidgetsComponent implements OnInit, OnDestroy {
 
-  @Input() public fetchContentWidgets: (query?: string) => Observable<{ contentWigets: any[], paging?: any }>;
+  @Input() public fetchContentWidgets: (query?: string) => Observable<{ contentWidgets: any[], paging?: any }>;
   @Input() public saveContentWidget: (contentWidget: any) => Observable<any>;
   @Input() public htmlEditorConfig: FsHtmlEditorConfig;
 

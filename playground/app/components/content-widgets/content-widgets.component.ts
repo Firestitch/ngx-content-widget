@@ -65,6 +65,7 @@ export class ContentWidgetsComponent implements OnInit {
   public fetchContentWidgets = (query) => {
     return of({
       contentWidgets: this.contentWidgets,
+      paging: {},
     });
   }
 
