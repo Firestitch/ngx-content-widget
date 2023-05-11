@@ -28,7 +28,10 @@ export class FsContentWidgetComponent implements OnInit {
 
   public ngOnInit(): void {
     this._saveContentWidget = this._data.saveContentWidget;
-    this.htmlEditorConfig = this._data.htmlEditorConfig || {};
+    this.htmlEditorConfig = {
+      ...this._data.htmlEditorConfig
+    };
+    
     this.contentWidget = { ...this._data.contentWidget };
   }
 
