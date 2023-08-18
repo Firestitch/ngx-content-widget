@@ -19,7 +19,7 @@ import { FsHtmlEditorConfig } from '@firestitch/html-editor';
 })
 export class FsContentWidgetsComponent implements OnInit, OnDestroy {
 
-  @Input() public fetchContentWidgets: (query?: string) => Observable<{ contentWidgets: any[], paging?: any }>;
+  @Input() public fetchContentWidgets: (query?: any) => Observable<{ contentWidgets: any[], paging?: any }>;
   @Input() public saveContentWidget: (contentWidget: any) => Observable<any>;
   @Input() public htmlEditorConfig: FsHtmlEditorConfig;
 
@@ -45,7 +45,7 @@ export class FsContentWidgetsComponent implements OnInit, OnDestroy {
         },
       ],
       fetch: (query) => {
-        return this.fetchContentWidgets(query.keyword)
+        return this.fetchContentWidgets(query)
           .pipe(
             map((data: any) => ({ data: data.contentWidgets })),
           );
@@ -59,16 +59,15 @@ export class FsContentWidgetsComponent implements OnInit, OnDestroy {
   }
 
   public open(contentWidget): void {
-    const dialogRef = this._dialog.open(FsContentWidgetComponent, {
+    this._dialog.open(FsContentWidgetComponent, {
       width: '90%',
       data: { 
         contentWidget,
         htmlEditorConfig: this.htmlEditorConfig,
         saveContentWidget: this.saveContentWidget,
       },
-    });
-
-    dialogRef.afterClosed()
+    })
+      .afterClosed()
       .pipe(
         takeUntil(this._destroy$),
       )
