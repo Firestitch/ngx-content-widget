@@ -59,7 +59,7 @@
     "@firestitch/filter": "^12.0.5",
     "@firestitch/form": "^12.1.1",
     "@firestitch/froala": "^1.0.5",
-    "@firestitch/html-editor": "^12.1.2",
+    "@firestitch/html-editor": "^12.7.4",
     "@firestitch/iframe": "^12.0.0",
     "@firestitch/label": "^12.0.0",
     "@firestitch/lint": "^12.0.18",
