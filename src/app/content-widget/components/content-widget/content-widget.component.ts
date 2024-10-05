@@ -40,7 +40,7 @@ export class FsContentWidgetComponent implements OnDestroy, OnInit {
   }
 
   public ngOnDestroy(): void {
-    this.destroy$.next();
+    this.destroy$.next(null);
     this.destroy$.complete();
   }
 
