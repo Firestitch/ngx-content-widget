@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit, OnDestroy, Input } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 
-import { FsListComponent, FsListConfig } from '@firestitch/list';
+import { FsListComponent, FsListConfig, FsListModule } from '@firestitch/list';
 import { ItemType } from '@firestitch/filter';
 
 import { Observable, Subject } from 'rxjs';
@@ -10,12 +10,15 @@ import { map, takeUntil } from 'rxjs/operators';
 
 import { FsContentWidgetComponent } from '../content-widget/content-widget.component';
 import { FsHtmlEditorConfig } from '@firestitch/html-editor';
+import { FsDateModule } from '@firestitch/date';
 
 
 @Component({
-  selector: 'fs-content-widgets',
-  templateUrl: './content-widgets.component.html',
-  styleUrls: ['./content-widgets.component.scss'],
+    selector: 'fs-content-widgets',
+    templateUrl: './content-widgets.component.html',
+    styleUrls: ['./content-widgets.component.scss'],
+    standalone: true,
+    imports: [FsListModule, FsDateModule],
 })
 export class FsContentWidgetsComponent implements OnInit, OnDestroy {
 

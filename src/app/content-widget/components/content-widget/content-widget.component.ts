@@ -5,12 +5,16 @@ import { takeUntil } from 'rxjs/operators';
 import { FsContentWidgetContentDirective } from '../../directives';
 import { FS_CONTENT_WIDGET_CONFIG } from '../../injectors';
 import { FsContentWidgetConfig } from '../../interfaces/content-widget-config';
+import { NgTemplateOutlet } from '@angular/common';
+import { FsContentWidgetRendererComponent } from '../content-widget-renderer/content-widget-renderer.component';
 
 
 @Component({
-  selector: 'fs-content-widget',
-  templateUrl: './content-widget.component.html',
-  styleUrls: ['./content-widget.component.scss'],
+    selector: 'fs-content-widget',
+    templateUrl: './content-widget.component.html',
+    styleUrls: ['./content-widget.component.scss'],
+    standalone: true,
+    imports: [NgTemplateOutlet, FsContentWidgetRendererComponent],
 })
 export class FsContentWidgetComponent implements OnDestroy, OnInit {
 

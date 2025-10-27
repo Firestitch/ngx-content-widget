@@ -13,26 +13,22 @@ import { FsContentWidgetContentDirective } from './directives';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-
-    MatDialogModule,
-    MatButtonModule,
-
-    FsHtmlEditorModule,
-    FsDialogModule,
-    FsHtmlRendererModule,
-  ],
-  exports: [
-    FsContentWidgetComponent,
-    FsContentWidgetContentDirective,
-  ],
-  declarations: [
-    FsContentWidgetRendererComponent,
-    FsContentWidgetComponent,
-    FsContentWidgetDialogComponent,
-    FsContentWidgetContentDirective,
-  ],
+    imports: [
+        CommonModule,
+        MatDialogModule,
+        MatButtonModule,
+        FsHtmlEditorModule,
+        FsDialogModule,
+        FsHtmlRendererModule,
+        FsContentWidgetRendererComponent,
+        FsContentWidgetComponent,
+        FsContentWidgetDialogComponent,
+        FsContentWidgetContentDirective,
+    ],
+    exports: [
+        FsContentWidgetComponent,
+        FsContentWidgetContentDirective,
+    ],
 })
 export class FsContentWidgetModule {
   static forRoot(): ModuleWithProviders<FsContentWidgetModule> {

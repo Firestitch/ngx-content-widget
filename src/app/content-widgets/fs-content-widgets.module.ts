@@ -19,30 +19,26 @@ import { FsContentWidgetComponent } from './components/content-widget';
 import { FsContentWidgetsComponent } from './components/content-widgets';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-
-    MatDialogModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatTabsModule,
-
-    FsListModule,
-    FsDateModule,
-    FsFormModule,
-    FsHtmlEditorModule,
-    FsDialogModule,
-    FsTextEditorModule,
-  ],
-  exports: [
-    FsContentWidgetsComponent,
-  ],
-  declarations: [
-    FsContentWidgetsComponent,
-    FsContentWidgetComponent,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        MatDialogModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatTabsModule,
+        FsListModule,
+        FsDateModule,
+        FsFormModule,
+        FsHtmlEditorModule,
+        FsDialogModule,
+        FsTextEditorModule,
+        FsContentWidgetsComponent,
+        FsContentWidgetComponent,
+    ],
+    exports: [
+        FsContentWidgetsComponent,
+    ],
 })
 export class FsContentWidgetsModule {
   static forRoot(): ModuleWithProviders<FsContentWidgetsModule> {

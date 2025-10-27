@@ -2,7 +2,8 @@ import { Directive } from '@angular/core';
 
 
 @Directive({
-  selector: '[fsContentWidgetContent]',
+    selector: '[fsContentWidgetContent]',
+    standalone: true,
 })
 export class FsContentWidgetContentDirective {
 

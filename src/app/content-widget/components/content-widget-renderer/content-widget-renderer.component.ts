@@ -2,12 +2,15 @@ import { AfterViewChecked, Component, ElementRef, Input, OnDestroy } from '@angu
 import { Router } from '@angular/router';
 
 import { Subject } from 'rxjs';
+import { FsHtmlRendererModule } from '@firestitch/html-editor';
 
 
 @Component({
-  selector: 'fs-content-widget-renderer',
-  templateUrl: './content-widget-renderer.component.html',
-  styleUrls: ['./content-widget-renderer.component.scss'],
+    selector: 'fs-content-widget-renderer',
+    templateUrl: './content-widget-renderer.component.html',
+    styleUrls: ['./content-widget-renderer.component.scss'],
+    standalone: true,
+    imports: [FsHtmlRendererModule],
 })
 export class FsContentWidgetRendererComponent implements OnDestroy, AfterViewChecked {
 

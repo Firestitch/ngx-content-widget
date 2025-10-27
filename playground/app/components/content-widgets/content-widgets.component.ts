@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FsHtmlEditorConfig } from '@firestitch/html-editor';
 
 import { of } from 'rxjs';
+import { FsContentWidgetsComponent } from '../../../../src/app/content-widgets/components/content-widgets/content-widgets.component';
 
 
 @Component({
-  selector: 'app-content-widgets',
-  templateUrl: './content-widgets.component.html',
-  styleUrls: ['./content-widgets.component.scss']
+    selector: 'app-content-widgets',
+    templateUrl: './content-widgets.component.html',
+    styleUrls: ['./content-widgets.component.scss'],
+    standalone: true,
+    imports: [FsContentWidgetsComponent]
 })
 export class ContentWidgetsComponent implements OnInit {
 
