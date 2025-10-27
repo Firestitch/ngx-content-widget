@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
 import { MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 import { FsHtmlEditorConfig, FsHtmlEditorModule } from '@firestitch/html-editor';
@@ -42,17 +42,14 @@ import { MatButton } from '@angular/material/button';
     ],
 })
 export class FsContentWidgetComponent implements OnInit {
+  private _message = inject(FsMessage);
+  private _data = inject(MAT_DIALOG_DATA);
+
 
   public contentWidget;
   public htmlEditorConfig: FsHtmlEditorConfig;
   
   private _saveContentWidget: (contentWidget: any) => Observable<any>;
-
-  public constructor(
-    private _message: FsMessage,
-    @Inject(MAT_DIALOG_DATA) private _data: any,
-  ) {
-  }
 
   public ngOnInit(): void {
     this._saveContentWidget = this._data.saveContentWidget;

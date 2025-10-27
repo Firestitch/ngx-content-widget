@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ContentChild, Inject, Input, OnDestroy, OnInit, TemplateRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ContentChild, Input, OnDestroy, OnInit, TemplateRef, inject } from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -17,6 +17,9 @@ import { FsContentWidgetRendererComponent } from '../content-widget-renderer/con
     imports: [NgTemplateOutlet, FsContentWidgetRendererComponent],
 })
 export class FsContentWidgetComponent implements OnDestroy, OnInit {
+  config = inject<FsContentWidgetConfig>(FS_CONTENT_WIDGET_CONFIG);
+  private _cdRef = inject(ChangeDetectorRef);
+
 
   @ContentChild(FsContentWidgetContentDirective, { read: TemplateRef })
   public contentWidgetContent: TemplateRef<any>;
@@ -26,11 +29,6 @@ export class FsContentWidgetComponent implements OnDestroy, OnInit {
   private destroy$ = new Subject();
 
   @Input() public tag: string;
-
-  constructor(
-    @Inject(FS_CONTENT_WIDGET_CONFIG) public config: FsContentWidgetConfig,
-    private _cdRef: ChangeDetectorRef,
-  ) { }
   
   public ngOnInit(): void {
     this.config.fetchContentWidget(this.tag)

@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy, Input, inject } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 
@@ -21,6 +21,8 @@ import { FsDateModule } from '@firestitch/date';
     imports: [FsListModule, FsDateModule],
 })
 export class FsContentWidgetsComponent implements OnInit, OnDestroy {
+  private _dialog = inject(MatDialog);
+
 
   @Input() public fetchContentWidgets: (query?: any) => Observable<{ contentWidgets: any[], paging?: any }>;
   @Input() public saveContentWidget: (contentWidget: any) => Observable<any>;
@@ -32,10 +34,6 @@ export class FsContentWidgetsComponent implements OnInit, OnDestroy {
   public config: FsListConfig;
 
   private _destroy$ = new Subject();
-
-  constructor(
-    private _dialog: MatDialog,
-  ) {}
 
   public ngOnInit(): void {
     this.config = {

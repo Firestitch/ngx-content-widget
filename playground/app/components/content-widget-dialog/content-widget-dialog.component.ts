@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FsContentWidget } from '@firestitch/content-widget';
 import { MatButton } from '@angular/material/button';
 
@@ -11,10 +11,8 @@ import { MatButton } from '@angular/material/button';
     imports: [MatButton]
 })
 export class ContentWidgetDialogComponent {
+  private _contentWidget = inject(FsContentWidget);
 
-  public constructor(
-    private _contentWidget: FsContentWidget,
-  ) {}
 
   public open(): void {
     this._contentWidget.open('terms', 'Terms and Conditions');

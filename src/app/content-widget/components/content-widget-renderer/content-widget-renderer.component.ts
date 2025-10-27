@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, ElementRef, Input, OnDestroy } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, Input, OnDestroy, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Subject } from 'rxjs';
@@ -13,15 +13,13 @@ import { FsHtmlRendererModule } from '@firestitch/html-editor';
     imports: [FsHtmlRendererModule],
 })
 export class FsContentWidgetRendererComponent implements OnDestroy, AfterViewChecked {
+  private _router = inject(Router);
+  private _el = inject(ElementRef);
+
 
   @Input() public content;
 
   private destroy$ = new Subject();
-
-  constructor(
-    private _router: Router,
-    private _el: ElementRef,
-  ) { }
   
   public ngAfterViewChecked(): void {
     this.registerHrefs();
