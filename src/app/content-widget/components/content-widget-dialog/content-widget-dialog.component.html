@@ -1,17 +1,17 @@
 <fs-dialog>
-  <ng-container *ngIf="title">
+  @if (title) {
     <div mat-dialog-title>{{title}}</div>
-  </ng-container>
+  }
   <mat-dialog-content>
     <fs-content-widget [tag]="tag"></fs-content-widget>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button 
-        mat-button 
-        color="primary" 
-        type="button" 
-        [mat-dialog-close]="null">
-      Close 
+    <button
+      mat-button
+      color="primary"
+      type="button"
+      [mat-dialog-close]="null">
+      Close
     </button>
   </mat-dialog-actions>
 </fs-dialog>

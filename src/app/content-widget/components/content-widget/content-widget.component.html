@@ -1,13 +1,17 @@
-<ng-container *ngIf="content">
-  <ng-container *ngIf="contentWidgetContent; else renderer">
-    <ng-container 
-      [ngTemplateOutlet]="contentWidgetContent" 
+@if (content) {
+  @if (contentWidgetContent) {
+    <ng-container
+      [ngTemplateOutlet]="contentWidgetContent"
       [ngTemplateOutletContext]="{ content: renderer }">
     </ng-container>
-  </ng-container>
+  } @else {
+    <fs-content-widget-renderer
+      [content]="content">
+    </fs-content-widget-renderer>
+  }
   <ng-template #renderer>
-    <fs-content-widget-renderer     
+    <fs-content-widget-renderer
       [content]="content">
     </fs-content-widget-renderer>
   </ng-template>
-</ng-container>
+}
