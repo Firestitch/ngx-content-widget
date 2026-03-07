@@ -1,20 +1,21 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectorRef, Component, ContentChild, Input, OnDestroy, OnInit, TemplateRef, inject } from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+
 import { FsContentWidgetContentDirective } from '../../directives';
 import { FS_CONTENT_WIDGET_CONFIG } from '../../injectors';
 import { FsContentWidgetConfig } from '../../interfaces/content-widget-config';
-import { NgTemplateOutlet } from '@angular/common';
 import { FsContentWidgetRendererComponent } from '../content-widget-renderer/content-widget-renderer.component';
 
 
 @Component({
-    selector: 'fs-content-widget',
-    templateUrl: './content-widget.component.html',
-    styleUrls: ['./content-widget.component.scss'],
-    standalone: true,
-    imports: [NgTemplateOutlet, FsContentWidgetRendererComponent],
+  selector: 'fs-content-widget',
+  templateUrl: './content-widget.component.html',
+  styleUrls: ['./content-widget.component.scss'],
+  standalone: true,
+  imports: [NgTemplateOutlet, FsContentWidgetRendererComponent],
 })
 export class FsContentWidgetComponent implements OnDestroy, OnInit {
   config = inject<FsContentWidgetConfig>(FS_CONTENT_WIDGET_CONFIG);
@@ -32,13 +33,13 @@ export class FsContentWidgetComponent implements OnDestroy, OnInit {
   
   public ngOnInit(): void {
     this.config.fetchContentWidget(this.tag)
-    .pipe(
-      takeUntil(this.destroy$),
-    )
-    .subscribe((content) => {
-      this.content = content;
-      this._cdRef.markForCheck();
-    });
+      .pipe(
+        takeUntil(this.destroy$),
+      )
+      .subscribe((content) => {
+        this.content = content;
+        this._cdRef.markForCheck();
+      });
   }
 
   public ngOnDestroy(): void {
