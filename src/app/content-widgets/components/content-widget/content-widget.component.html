@@ -11,7 +11,7 @@
           <ng-template matTabContent>
             <fs-text-editor
               [(ngModel)]="contentWidget.content"
-              [config]="{ language: 'html', tabSize: 2 }"
+              [config]="{ language: 'html', tabSize: 2, wordWrap: 'on' }"
               name="html">
             </fs-text-editor>
           </ng-template>
@@ -29,7 +29,7 @@
           <ng-template matTabContent>
             <fs-text-editor
               [(ngModel)]="contentWidget.styles"
-              [config]="{ language: 'scss', tabSize: 2 }"
+              [config]="{ language: 'scss', tabSize: 2, wordWrap: 'on' }"
               name="styles">
             </fs-text-editor>
           </ng-template>
