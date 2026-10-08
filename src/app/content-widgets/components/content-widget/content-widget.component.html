@@ -16,15 +16,21 @@
             </fs-text-editor>
           </ng-template>
         </mat-tab>
-        <mat-tab label="Rich Text">
-          <ng-template matTabContent>
-            <fs-html-editor
-              [(ngModel)]="contentWidget.content"
-              [config]="htmlEditorConfig"
-              name="content">
-            </fs-html-editor>
-          </ng-template>
-        </mat-tab>
+        @if (contentWidget.variables?.length) {
+          <mat-tab label="Variables">
+            <div class="variables">
+              @for (variable of contentWidget.variables; track variable.name) {
+                <code>{{ variable.token }}</code>
+                <div>
+                  <div>{{ variable.label }}</div>
+                  @if (variable.description) {
+                    <div class="variable-description">{{ variable.description }}</div>
+                  }
+                </div>
+              }
+            </div>
+          </mat-tab>
+        }
         <mat-tab label="Styles">
           <ng-template matTabContent>
             <fs-text-editor
@@ -36,9 +42,9 @@
         </mat-tab>
         <mat-tab label="Settings">
           <mat-form-field>
+            <mat-label>Name</mat-label>
             <input
               matInput
-              placeholder="Name"
               [(ngModel)]="contentWidget.name"
               name="name"
               [required]="true">

@@ -2,15 +2,22 @@ mat-form-field {
   width: 100%;
 }
 
-fs-html-editor {
-  min-height: 400px;
-  display: block;
-  overflow: hidden;
-}
-
 .subtitle {
   font-size: 60%;
   line-height: normal;
+}
+
+// Two columns, token then what it is, so the tokens line up down the list however long each is.
+.variables {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 20px;
+  padding-top: 20px;
+}
+
+.variable-description {
+  color: #666;
+  font-size: 90%;
 }
 
 :host ::ng-deep {

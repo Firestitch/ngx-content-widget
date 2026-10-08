@@ -1,6 +1,7 @@
 export { FsContentWidgetsModule } from './app/content-widgets/fs-content-widgets.module';
 export { FsContentWidgetModule } from './app/content-widget/fs-content-widget.module';
 export { FsContentWidgetConfig } from './app/content-widget/interfaces/content-widget-config';
+export { FsContentWidgetVariable } from './app/content-widgets/interfaces';
 
 export { FsContentWidgetsComponent } from './app/content-widgets/components/content-widgets/content-widgets.component';
 export { FsContentWidgetComponent } from './app/content-widget/components/content-widget/content-widget.component';

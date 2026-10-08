@@ -26,6 +26,7 @@ export class FsContentWidgetsComponent implements OnInit, OnDestroy {
 
   @Input() public fetchContentWidgets: (query?: any) => Observable<{ contentWidgets: any[], paging?: any }>;
   @Input() public saveContentWidget: (contentWidget: any) => Observable<any>;
+  // Unused since the dialog lost its Rich Text tab. Kept so apps that still bind it compile.
   @Input() public htmlEditorConfig: FsHtmlEditorConfig;
 
   @ViewChild(FsListComponent, { static: true })
@@ -64,7 +65,6 @@ export class FsContentWidgetsComponent implements OnInit, OnDestroy {
       width: '90%',
       data: { 
         contentWidget,
-        htmlEditorConfig: this.htmlEditorConfig,
         saveContentWidget: this.saveContentWidget,
       },
     })
